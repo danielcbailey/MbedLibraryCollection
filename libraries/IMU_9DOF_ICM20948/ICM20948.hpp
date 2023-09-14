@@ -34,7 +34,7 @@ class IMU_ICM20948 {
     void getGyroscopeData(float* x, float* y, float* z);
 
     // uT per axis
-    void getMagnotometerData(float* x, float* y, float* z);
+    void getMagnetometerData(float* x, float* y, float* z);
 
     private:
     inline void write(char addr, char data, bool isMag = false) {

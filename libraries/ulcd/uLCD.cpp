@@ -586,7 +586,7 @@
 
         this->awaitResponse();
 
-        char* buf = (char*) malloc_safe(10);
+        char buf[10];
         printMalloc(buf);
         buf[0] = 0x0;
         buf[1] = 0xA;
@@ -595,8 +595,8 @@
         this->addIntToBuf(&buf[6], width);
         this->addIntToBuf(&buf[8], height);
         this->serial.checkBufferFree();
-        this->serial.writeAndFree(buf, 10);
-        this->serial.checkBufferFree();
+        this->serial.write(buf, 10);
+        this->serial.sync();
 
         this->waitToWrite(image, width * height * 2, 2500, freeable);
     }

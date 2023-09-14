@@ -73,7 +73,7 @@ void IMU_ICM20948::getGyroscopeData(float* x, float* y, float* z) {
 }
 
 // uT per axis
-void IMU_ICM20948::getMagnotometerData(float* x, float* y, float* z) {
+void IMU_ICM20948::getMagnetometerData(float* x, float* y, float* z) {
     setControllingMag(true);
     write(0x31, 0x08, true);
     wait_us(10000);
