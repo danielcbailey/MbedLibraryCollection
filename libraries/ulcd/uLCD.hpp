@@ -167,7 +167,7 @@ class uLCD {
     void drawCircleFilled(int x, int y, int radius, uint16_t color);
 
     /**
-     * Draws a triange with no fill
+     * Draws a triangle with no fill
      * @param x1 The x coordinate of the first vertex
      * @param y2 The y coordinate of the first vertex
      * @param x2 The x coordinate of the second vertex
@@ -247,6 +247,13 @@ class uLCD {
      * @returns The 4DGL color
      */
     static uint16_t get4DGLColor(const char* color);
+
+    /**
+     * Static function for converting 32 bit integer colors to 4DGL colors
+     * @param color The ARGB packed color as a 32-bit integer
+     * @returns The 4DGL color
+     */
+    static uint16_t get4DGLColor(uint32_t color);
 };
 
 #endif //ULCD_INCLUDED

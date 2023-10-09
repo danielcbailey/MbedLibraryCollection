@@ -711,5 +711,13 @@ uint16_t uLCD::get4DGLColor(const char* color) {
     uint16_t green = (normalColor >> 10) & 0x3F;
     uint16_t blue = (normalColor >> 3) & 0x1F;
 
-    return (red << 3) + (green >> 3) + (green << 13) + blue;
+    return (red << 3) + (green >> 3) + (green << 13) + (blue << 8);
+}
+
+uint16_t uLCD::get4DGLColor(uint32_t normalColor) {
+    uint16_t red = (normalColor >> 19) & 0x1F;
+    uint16_t green = (normalColor >> 10) & 0x3F;
+    uint16_t blue = (normalColor >> 3) & 0x1F;
+
+    return (red << 3) + (green >> 3) + (green << 13) + (blue << 8);
 }
